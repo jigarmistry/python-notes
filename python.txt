@@ -109,8 +109,32 @@ Python
     -> for .. in .. is used to indicate for loop. We can treat i as index for "test", that index increment by 1 for every
         iteration.
 
-        t e s t     Here you can see we have t at 0 2 at 1.. Like all chars have their own indexes.
+        t e s t     Here you can see we have t at 0 , e at 1.. Like all chars have their own indexes.
         0 1 2 3
 
     -> Here we will have ouput like t e s and t.
-    
+
+-> List:
+    -> List is collections of elements.
+    -> We can use list to store multiple values of same type or not. We can have list of list , list of strings, list
+       of numbers.
+
+    -> list_result = [10, 20, 30]
+
+    -> This is simple list contains 3 values. We can access elements from list by index.
+    -> List indices start from 0. If we need to access 20 from above list then we need to execute following code:
+
+    -> list_result[1]   -- This will return 20 value. Likewise for 30 list_result[2]
+
+    -> If we want to iterate over the list then we can use for loop.
+
+    -> for i in list_result:
+            print (i)
+
+    -> This will print all the values of list in new line. By this way we can access the elements.
+    -> If we need get 20 and 30 both then we can use list_result[1:3]
+    -> If we need to add values into list then we can use append method.
+
+    -> list_result.append(40)  -- This will add 40 at the end of list.
+    -> list_result.insert(3,30) -- This will insert 30 at index 3.
+    -> Likewise we do have many operation on lists.        
