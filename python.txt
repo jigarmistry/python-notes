@@ -22,7 +22,7 @@ Python
 -> After that write "python" in compt. You will see python command line interface their with python version and all.
 -> This is simple command line interface for python language. Here you can type any python related code and execute.
    This command line interface ship with python binaries(setup). We don't need to do anything for setup this.
--> Let us create very small program "Hello World !".
+-> Let us create very small program "Hello World !": (S-1)
 
 -> print ("Hello World !")
 
@@ -34,7 +34,7 @@ Python
 
 ** Basics:
 
--> Write following code into compt:
+-> Write following code into compt:(S-2)
 
    a = 10
    b = 20
@@ -42,7 +42,75 @@ Python
    print (c)
 
 -> Here we have lot of things to understand. Here a is variable that holds the value 10.
+
 -> Variable : Variable is one type of container. In variable we can hold the value. Here we hold the 10 value into a variable
               Value of variable may change over the time. We can re-value the same variable.
+
 -> In above snippet we have total of 3 variables that holds different values. Look at line number 3, here we add values of
    two variables and print that values on line number four. Execute this code we can have result 30 on screen.
+-> Here we have basics introduction to python. Python command line tool is sometime called python intrepreter.
+-> From command line tool we can execute any python code, but for read world programming we need to create scripts.
+
+-> Script : Script is collection of programming sentences, that sentences will execute in some order to get outcome.
+
+-> If we need to create script for S-2 then we need to have code editor or we can use python IDLE that comes with python.
+   Choice is upto us.
+-> Let us create simple script for S-2. Open text editor and write code into that. Save file with "first.py" (We can have
+   different name for file). Python scripts have extension ".py".
+-> Now go to command prompt and cd to our working directory where we have saved our file.
+-> Write following command to execute our first script:
+
+   python first.py
+
+-> This will execute our script and output as "30".
+
+** Python Internals:
+
+-> Every programming language have their own syntax and style for internals.
+
+-> Variables:
+    -> Variable is simple container of value.
+    -> Variable can hold any type of value. (String,Integer,Float)
+    -> String : Group of chars ("step","test")
+    -> Integer : Numeric value (10,20)
+    -> Float : Numeric value with precision (10.90,34.90)
+
+-> if..else
+    -> if..else is basic conditional operator in python. It is useful for checking conditions and for branch access.
+    -> IF this then do this ELSE do this.
+
+    a = 10
+    if a == 10:
+        print (a)
+    else:
+        print ("A is not 10")
+
+
+    -> Here we can see that if a is 10 then it will print 10 otherwise "A is not 10".
+    -> Here "==" is for checking equal values. (!= for not equal, > , < , etc..)
+
+    a = 10
+    if a == 10:
+        print (a)
+    else if a == 20:
+        print (a)
+    else:
+        print ("A is not 10")
+
+    -> Here else if is used to check value of a once again. We can have multiple else if keywords.
+    -> Here if a is 20 then it will print 20 on compt.
+
+-> for loop:
+    -> for loop is used for looping purpose. If we need to iterate over something more then once then we can use this.
+
+    for i in "test":
+        print (i)
+
+    -> for .. in .. is used to indicate for loop. We can treat i as index for "test", that index increment by 1 for every
+        iteration.
+
+        t e s t     Here you can see we have t at 0 2 at 1.. Like all chars have their own indexes.
+        0 1 2 3
+
+    -> Here we will have ouput like t e s and t.
+    
