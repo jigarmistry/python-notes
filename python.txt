@@ -1,0 +1,48 @@
+Python
+------
+
+* Introduction:
+
+-> Python is a programming language.
+-> It is kind of interpreted language. (We don't have to compile the program to execute)
+-> It is dynamic type language.(We don't have to specify the type of variables)
+-> We can use python for scripting, web development and GUI programming.
+
+* Getting Started:
+
+-> We need to have python installed on our computer to getting started with python.
+-> Go to www.python.org for downloading python.
+-> Once download is complete, we can install it based on which operating system we are using. There are different
+   options to install python on computer. Refer website for that.
+-> Once python is installed on computer, we can use it from command prompt(Terminal).
+
+** Dive Into Python :
+
+-> To use python(at basic level) we need to open command prompt(compt).
+-> After that write "python" in compt. You will see python command line interface their with python version and all.
+-> This is simple command line interface for python language. Here you can type any python related code and execute.
+   This command line interface ship with python binaries(setup). We don't need to do anything for setup this.
+-> Let us create very small program "Hello World !".
+
+-> print ("Hello World !")
+
+-> Write above code into compt and press enter you will see "Hello World ! " printed on second line.
+-> "print" is python inbuilt function that useful for printing something. It will take argument as anything you want to
+   print on screen.
+-> Function : Function is group of programming sentences. It is useful for reusability of code. Like here "print" is function
+   that we can use multiple times. Function can take arguments or not.
+
+** Basics:
+
+-> Write following code into compt:
+
+   a = 10
+   b = 20
+   c = a + b
+   print (c)
+
+-> Here we have lot of things to understand. Here a is variable that holds the value 10.
+-> Variable : Variable is one type of container. In variable we can hold the value. Here we hold the 10 value into a variable
+              Value of variable may change over the time. We can re-value the same variable.
+-> In above snippet we have total of 3 variables that holds different values. Look at line number 3, here we add values of
+   two variables and print that values on line number four. Execute this code we can have result 30 on screen.
