@@ -1,0 +1,16 @@
+{% extends 'practice/base.html' %}
+
+{% block content %}
+    {% for post in post_list %}
+        <div class="post">
+            <div class="date">
+                {{ post.published_date }}
+            </div>
+            <h3><a href="{% url 'practice:post_detail' pk=post.pk %}">{{ post.title }}</a></h3>
+            <h5 class="author">By {{post.author}}</h5>
+            {{ post.text|safe|truncatewords:"50"|linebreaks }}
+            <a href="{% url 'practice:post_detail' pk=post.pk %}">read more</a>
+        </div>
+        <hr>
+    {% endfor %}
+{% endblock %}

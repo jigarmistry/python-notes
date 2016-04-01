@@ -1,0 +1,29 @@
+{% load staticfiles %}
+<html>
+
+<head>
+  <title>Projects</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+
+</head>
+
+<body>
+  <div class="card-panel teal lighten-2">
+    <h5>Projects:</a></h5>
+  </div>
+  <div class="content container">
+    <ul class="collapsible" data-collapsible="accordion">
+      {% for project in project_list %}
+      <li>
+        <div class="collapsible-header"><i class="material-icons">description</i><a href="{{project_url}}{{ project }}" class="collection-item">{{ project }}</a></div>
+        <div class="collapsible-body"><p><b>Path :</b> {{project_url}}{{ project }}</p></div>
+      </li>
+      {% endfor %}
+    </ul>
+    </div>
+  </div>
+</body>
+</html>

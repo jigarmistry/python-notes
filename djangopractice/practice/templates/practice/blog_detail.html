@@ -1,0 +1,14 @@
+{% extends 'practice/base.html' %}
+
+{% block content %}
+    <div class="post">
+        {% if post.published_date %}
+            <div class="date">
+                {{ post.published_date }}
+            </div>
+        {% endif %}
+        <h3>{{ post.title }}</h3>
+        <h5 class="author">By {{post.author}}</h5><br>
+        <p>{{ post.text|safe|linebreaks }}</p>
+    </div>
+{% endblock %}
