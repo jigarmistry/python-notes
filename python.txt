@@ -137,4 +137,4 @@ Python
 
     -> list_result.append(40)  -- This will add 40 at the end of list.
     -> list_result.insert(3,30) -- This will insert 30 at index 3.
-    -> Likewise we do have many operation on lists.        
+    -> Likewise we do have many operation on lists.
