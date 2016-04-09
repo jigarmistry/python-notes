@@ -4,6 +4,8 @@ from colorama import Fore, Back, Style
 from tinydb import TinyDB, Query
 
 db = TinyDB('db.json')
+#remote_api = "127.0.0.1:8000"
+remote_api = "pythonui.pythonanywhere.com"
 
 def check_internet_connection():
     try:
@@ -39,7 +41,7 @@ def insert_into_db(data,person_name):
 
 def verify_user(person_name):
     data = {'person':person_name}
-    r = requests.post('http://127.0.0.1:8000/Emaily/default/getusers.json', data = data)
+    r = requests.post('http://'+remote_api+'/Emaily/default/getusers.json', data = data)
     result = r.json()
     return result
 
@@ -71,7 +73,7 @@ def chat_now(person_name):
             continue
         datestamp = datetime.datetime.now().strftime("%d-%b-%Y %H:%M:%S")
         data = {'person':person_name,'msg':msg,'datestamp':datestamp}
-        r = requests.post('http://127.0.0.1:8000/Emaily/default/getlogs.json', data = data)
+        r = requests.post('http://'+remote_api+'/Emaily/default/getlogs.json', data = data)
         if r.status_code == 200 and msg != "S" and msg != "H":
             insert_into_db(data,person_name)
         live_logs = r.json()
