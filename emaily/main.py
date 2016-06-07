@@ -41,7 +41,7 @@ def insert_into_db(data,person_name):
 
 def verify_user(person_name):
     data = {'person':person_name}
-    r = requests.post('http://'+remote_api+'/Emaily/default/getusers.json', data = data)
+    r = requests.post('http://'+remote_api+'/Emaily/default/getusers.json', data = data)    
     result = r.json()
     return result
 
