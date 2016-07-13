@@ -17,27 +17,36 @@ def check_internet_connection():
 def get_menu():
     print (Fore.CYAN +"----------------------------")
     print (Fore.YELLOW +"1 : Show Your Previous Chats")
-    print (Fore.YELLOW +"2 : Chat Now")
-    print (Fore.YELLOW +"3 : Show Menu")
-    print (Fore.YELLOW +"4 : Quit")
+    print (Fore.YELLOW +"2 : Show User Status")
+    print (Fore.YELLOW +"3 : Chat Now")
+    print (Fore.YELLOW +"4 : Show Menu")
+    print (Fore.YELLOW +"5 : Quit")
     print (Fore.CYAN +"----------------------------")
 
 def handle_menu_option(option,person_name):
-    if option == "4":
-        print ("")
-        print (Fore.WHITE + "Thank You..")
-        print(Style.RESET_ALL)
-        exit()
-    elif option == "3":
+    if option == "5":
+        logout_user(person_name)
+    elif option == "4":
         get_menu()
-    elif option == "2":
+    elif option == "3":
         chat_now(person_name)
+    elif option == "2":
+        show_user_status(person_name)    
     elif option == "1":
         print_logs(db.table(person_name).all())
 
 def insert_into_db(data,person_name):
     table = db.table(person_name)
     table.insert(data)
+
+def logout_user(person_name):
+    data = {'person':person_name}
+    r = requests.post('http://'+remote_api+'/Emaily/default/logoutuser.json', data = data)
+    result = r.json()
+    print ("")
+    print (Fore.WHITE + result['msg'])
+    print(Style.RESET_ALL)
+    exit()
 
 def verify_user(person_name):
     data = {'person':person_name}
@@ -50,8 +59,19 @@ def print_logs(live_logs):
     print ("")
     for log in reversed(logs):
         datestamp = str(log["datestamp"])[12:]
-        print (Fore.CYAN + str(log["person"]) + " (" +str(datestamp) + ")"+" : " + Fore.MAGENTA + str(log["msg"]))
+        print (Fore.CYAN + str(log["person"]) + " (" +str(datestamp) + ")"+" : " + Fore.BLUE + str(log["msg"]))
     print ("")
+
+def show_user_status(person_name):
+    data = {'person':person_name}
+    r = requests.post('http://'+remote_api+'/Emaily/default/getuserstatus.json', data = data)
+    result = r.json()
+    print("")
+    for user in result['users']:
+        if user['personname']!=person_name:
+            print (Fore.CYAN +user['personname'] +" : "+ Fore.WHITE + user['status'])
+    print("")    
+
 
 def chat_now(person_name):
     print ("")
@@ -61,7 +81,7 @@ def chat_now(person_name):
     print ("")
     msg = "e"
     while msg != "Q":
-        msg = input(Fore.GREEN + "Enter Your Message : "+ Fore.MAGENTA)
+        msg = input(Fore.GREEN + "Enter Your Message : "+ Fore.YELLOW)
         if msg == "Q":
             get_menu()
             break
