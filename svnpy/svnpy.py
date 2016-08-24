@@ -139,7 +139,7 @@ def handle_command(svn_command, auth_string):
     if svn_command == "add":
         str_file_names = input("Enter File Names (filename1,filename2) : ")
         print(get_file_names(str_file_names))
-        # os.system("svn add %s" % (get_file_names(str_file_names)) + auth_string)
+        os.system("svn add %s" % (get_file_names(str_file_names)) + auth_string)
     if svn_command == "list":
         check = input("File Name? (y/n) : ")
         str_file_names = ""
